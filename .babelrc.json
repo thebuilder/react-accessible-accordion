@@ -1,17 +1,23 @@
 {
     "presets": [
         [
-            "es2015",
+            "@babel/preset-env",
             {
-                "modules": false
+                "targets": {
+                    "esmodules": false
+                }
             }
         ],
-        "react",
-        "stage-2"
+        "@babel/preset-react",
+        "@babel/preset-stage-2"
     ],
     "env": {
         "test": {
-            "presets": ["es2015", "react", "stage-2"]
+            "presets": [
+                "@babel/preset-env",
+                "@babel/preset-react",
+                "@babel/preset-stage-2"
+            ]
         }
     }
 }
