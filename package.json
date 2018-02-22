@@ -28,23 +28,6 @@
     "type": "git",
     "url": "git+https://github.com/springload/react-accessible-accordion.git"
   },
-  "babel": {
-    "presets": [
-      [
-        "es2015",
-        {
-          "modules": false
-        }
-      ],
-      "react",
-      "stage-2"
-    ],
-    "env": {
-      "test": {
-        "presets": ["es2015", "react", "stage-2"]
-      }
-    }
-  },
   "jest": {
     "setupFiles": ["./src/setupTests.js"],
     "testPathIgnorePatterns": ["/node_modules/", "/dist/"]
