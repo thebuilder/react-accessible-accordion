@@ -10,11 +10,23 @@ export default [
         input: 'src/index.js',
         external: ['react', 'react-dom'],
         output: [
-            { file: pkg.main, format: 'umd', name: 'reactAccessibleAccordion' },
+            {
+                file: pkg.main,
+                format: 'umd',
+                name: 'reactAccessibleAccordion',
+                globals: {
+                    react: 'React',
+                    'react-dom': 'ReactDom',
+                },
+            },
             {
                 file: pkg['jsnext:main'],
                 format: 'es',
                 name: 'reactAccessibleAccordion',
+                globals: {
+                    react: 'React',
+                    'react-dom': 'ReactDom',
+                },
             },
         ],
         plugins: [
