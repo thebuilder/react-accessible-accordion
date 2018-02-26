@@ -16,10 +16,8 @@
     "css": "cp src/react-accessible-accordion.css dist",
     "build": "NODE_ENV=production rollup -c",
     "start": "npm run js:watch",
-    "start-demo":
-      "webpack-dev-server --config ./webpack/webpack.config.demo.js",
-    "pages":
-      "rm -rf pages && cp -R demo pages && webpack --config=./webpack/webpack.config.pages.js",
+    "start-demo": "webpack-dev-server --config ./webpack/webpack.config.demo.js",
+    "pages": "rm -rf pages && cp -R demo pages && webpack --config=./webpack/webpack.config.pages.js",
     "deploy": "npm run pages && ./bin/deploy.sh",
     "prettier": "prettier **/*.js --write",
     "prepublishOnly": "npm run build"
@@ -29,8 +27,13 @@
     "url": "git+https://github.com/springload/react-accessible-accordion.git"
   },
   "jest": {
-    "setupFiles": ["./src/setupTests.js"],
-    "testPathIgnorePatterns": ["/node_modules/", "/dist/"]
+    "setupFiles": [
+      "./src/setupTests.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
   },
   "keywords": [
     "react",
@@ -40,7 +43,9 @@
     "accessible",
     "accessibility"
   ],
-  "authors": ["Vincent Audebert <vincent@springload.co.nz>"],
+  "authors": [
+    "Vincent Audebert <vincent@springload.co.nz>"
+  ],
   "contributors": [
     {
       "name": "Mitch Ryan",
@@ -63,22 +68,23 @@
     "@babel/cli": "^7.0.0-beta.40",
     "@babel/core": "^7.0.0-beta.40",
     "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-flow": "^7.0.0-beta.40",
     "@babel/preset-react": "^7.0.0-beta.40",
     "@babel/preset-stage-2": "^7.0.0-beta.40",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
     "coveralls": "^3.0.0",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.4.0",
     "css-loader": "^0.28.9",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.18.1",
+    "eslint-config-airbnb": "^15.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-flowtype": "^2.46.0",
     "eslint-plugin-flowtype-errors": "^3.3.7",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.4.0",
     "flow-bin": "^0.66.0",
     "jest": "^22.4.0",
     "prettier": "^1.10.2",
