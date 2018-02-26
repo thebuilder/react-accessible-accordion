@@ -21,7 +21,9 @@ export default [
                 browser: true,
             }),
             eslint(),
-            babel(),
+            babel({
+                exclude: 'node_modules/**',
+            }),
             commonjs(),
             replace({
                 exclude: 'node_modules/**',
