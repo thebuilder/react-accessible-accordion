@@ -168,6 +168,12 @@ We recommend that you copy them into your own app and modify them to suit your n
           <td>null</td>
           <td>Class name for hidden body state</td>
       </tr>
+      <tr>
+          <td>onClick</td>
+          <td>Function(key)</td>
+          <td>noop</td>
+          <td>Triggered on title click</td>
+      </tr>
     </tbody>
 </table>
 

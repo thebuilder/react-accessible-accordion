@@ -6,6 +6,7 @@ import classNames from 'classnames';
 type AccordionItemTitleProps = ElementProps<'div'> & {
     hideBodyClassName: string,
     uuid: string | number,
+    onClick: Function,
 };
 
 type AccordionItemTitleState = {};
@@ -17,7 +18,7 @@ class AccordionItemTitle extends Component<
     static accordionElementName = 'AccordionItemTitle';
 
     handleClick = () => {
-        const { uuid, accordionStore } = this.props;
+        const { uuid, accordionStore, onClick } = this.props;
         const { state } = accordionStore;
         const { accordion, onChange, items } = state;
         const foundItem = items.find(item => item.uuid === uuid);
@@ -32,6 +33,10 @@ class AccordionItemTitle extends Component<
                     .filter(item => item.expanded)
                     .map(item => item.uuid),
             );
+        }
+
+        if (onClick) {
+            onClick(uuid);
         }
     };
 
@@ -50,6 +55,7 @@ class AccordionItemTitle extends Component<
             className,
             hideBodyClassName,
             accordionStore,
+            onClick,
             ...rest
         } = this.props;
         const foundItem = items.find(item => item.uuid === uuid);

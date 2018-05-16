@@ -214,4 +214,26 @@ describe('AccordionItemTitle', () => {
             ).length,
         ).toEqual(0);
     });
+
+    it('custom onClick event management', async () => {
+        const spyFct = jest.fn();
+        const wrapper = mount(
+            <Provider inject={[accordionContainer, itemContainer]}>
+                <AccordionItemTitle onClick={spyFct}>
+                    Fake Title
+                </AccordionItemTitle>
+            </Provider>,
+        );
+
+        wrapper.find('div').simulate('click');
+
+        expect(
+            accordionContainer.state.items.filter(
+                item => item.expanded === true,
+            ).length,
+        ).toEqual(1);
+
+        expect(spyFct.mock.calls.length).toEqual(1);
+        expect(spyFct.mock.calls[0][0]).toBe(0); // check uuid is passed
+    });
 });

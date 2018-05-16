@@ -15,19 +15,22 @@ const defaultProps = {
 
 type AccordionItemTitleWrapperProps = ElementProps<'div'> & {
     hideBodyClassName: string,
+    onClick?: Function,
 };
 
-const AccordionItemTitleWrapper = (props: AccordionItemTitleWrapperProps) => (
-    <Subscribe to={[AccordionContainer, ItemContainer]}>
-        {(accordionStore, itemStore) => (
-            <AccordionItemTitle
-                {...props}
-                uuid={itemStore.state.uuid}
-                accordionStore={accordionStore}
-            />
-        )}
-    </Subscribe>
-);
+const AccordionItemTitleWrapper = (props: AccordionItemTitleWrapperProps) => {
+    return (
+        <Subscribe to={[AccordionContainer, ItemContainer]}>
+            {(accordionStore, itemStore) => (
+                <AccordionItemTitle
+                    {...props}
+                    uuid={itemStore.state.uuid}
+                    accordionStore={accordionStore}
+                />
+            )}
+        </Subscribe>
+    );
+};
 AccordionItemTitleWrapper.defaultProps = defaultProps;
 
 export default AccordionItemTitleWrapper;
